@@ -1,0 +1,225 @@
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Profile image styling */
+img.rounded-circle {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: 4px solid #9cc0f6; /* Bootstrap primary */
+  box-shadow: 0 0 10px #9cc0f6,0 0 20px #9cc0f6;
+}
+.nav-link{
+  font-family: 'Times New Roman', Times, serif;
+  color: blue;
+}
+/* Add hover effect for nav links */
+.nav-link:hover {
+  text-decoration: none;
+  color: #000000 !important;
+}
+
+/* Navbar shadow effect */
+header {
+  transition: background-color 0.3s ease;
+}
+
+/* Section padding adjustment for smaller screens */
+@media (max-width: 576px) {
+  section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+.timeline-container {
+  position: relative;
+  max-width: 800px;
+  padding-left: 20px;
+  border-left: 3px solid #6c757d;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 40px;
+  padding-left: 20px;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -11px;
+  top: 5px;
+  width: 20px;
+  height: 20px;
+  background-color: #0d6efd;
+  border-radius: 50%;
+  border: 3px solid white;
+}
+
+.timeline-item h5 {
+  margin-bottom: 5px;
+}
+
+.timeline-item p {
+  margin-bottom: 8px;
+  color: #555;
+}
+.education-bg {
+  background: linear-gradient(135deg, #e0f7fa, #f1f8e9);
+}
+.about-photo-large {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  aspect-ratio: 1 / 1; /* Maintains circular shape */
+  border-radius: 50%;
+  object-fit: cover;
+  border: 10px solid #fff;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.25);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  margin: auto;
+}
+
+.about-photo-large:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 60px rgba(255, 193, 7, 0.7); /* glowing yellow */
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(-50px);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.05) translateY(10px);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-bounce {
+  animation: bounceIn 1s ease-in-out;
+}
+.card:hover {
+  transform: scale(1.03);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+.progress-bar {
+  transition: width 1.5s ease-in-out;
+}
+.rounded-circle {
+  transition: transform 0.3s ease;
+}
+.rounded-circle:hover {
+  transform: scale(1.1);
+}
+.contact-section-bg {
+  background: linear-gradient(135deg, #eedbed 0%, #b5cfd7 100%);
+  color: #1c1c1c;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+.contact-section-bg .social-icon {
+  animation: float 3s ease-in-out infinite;
+}
+.social-icons a {
+  color: rgb(15, 15, 15);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+  color: #f8b500; /* Golden effect */
+}
+
+
+
+.contact-section-bg h2 {
+  font-weight: bold;
+  animation: fadeInUp 1s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Colorful gradient background with soft shadow */
+.colorful-navbar {
+  background: linear-gradient(90deg, #ff416c, #ff4b2b); /* pink to orange */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Brand styling */
+.colorful-navbar .navbar-brand {
+  font-weight: bold;
+  color: #fff !important;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
+
+/* Nav links styling */
+.colorful-navbar .nav-link {
+  color: #fff !important;
+  position: relative;
+  padding: 8px 14px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover underline effect */
+.colorful-navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: #fff;
+  transition: width 0.4s ease;
+}
+
+/* On hover, underline grows and link zooms */
+.colorful-navbar .nav-link:hover {
+  color: #ffd700 !important; /* gold on hover */
+  transform: scale(1.08);
+}
+
+.colorful-navbar .nav-link:hover::after {
+  width: 100%;
+}
+
+/* Toggler icon override for white color */
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Theme switch & language dropdown */
+.colorful-navbar .form-select,
+.colorful-navbar .btn-outline-secondary {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: #fff;
+}s
+
+.colorful-navbar .form-select:focus,
+.colorful-navbar .btn-outline-secondary:focus {
+  box-shadow: none;
+}
+
+
