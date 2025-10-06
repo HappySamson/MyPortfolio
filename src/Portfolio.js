@@ -262,26 +262,30 @@ export default function Portfolio() {
 </section>
 
 
-    <section id="skills" className="container py-5 text-center">
+   <section id="skills" className="container py-5 text-center">
   <h2 className="mb-4 text-info">{t.skills}</h2>
 
   <div className="skills-wrapper position-relative overflow-hidden py-3">
     <div className="skills-marquee d-flex">
       {[
-        "React.js",
-        "Bootstrap CSS",
-        "JavaScript",
-        "HTML & CSS",
-        "Node.js",
-        "Express.js",
-        "MongoDB",
-        "Git & GitHub"
+        { name: "React.js", color: "linear-gradient(90deg, #61dafb, #21a1f1)" },
+        { name: "Bootstrap CSS", color: "linear-gradient(90deg, #563d7c, #7952b3)" },
+        { name: "JavaScript", color: "linear-gradient(90deg, #f7df1e, #f0c300)" },
+        { name: "HTML & CSS", color: "linear-gradient(90deg, #e34c26, #264de4)" },
+        { name: "Node.js", color: "linear-gradient(90deg, #3c873a, #68a063)" },
+        { name: "Express.js", color: "linear-gradient(90deg, #000000, #444444)" },
+        { name: "MongoDB", color: "linear-gradient(90deg, #4db33d, #116149)" },
+        { name: "Git & GitHub", color: "linear-gradient(90deg, #f1502f, #24292e)" }
       ].map((skill, i) => (
         <span
           key={i}
-          className="badge rounded-pill bg-gradient text-white mx-2 fs-6"
+          className="badge rounded-pill skill-badge text-white mx-2 fs-6"
+          style={{
+            background: skill.color,
+            boxShadow: "0 3px 8px rgba(0,0,0,0.2)"
+          }}
         >
-          {skill}
+          {skill.name}
         </span>
       ))}
     </div>
@@ -291,7 +295,7 @@ export default function Portfolio() {
     .skills-marquee {
       display: inline-flex;
       white-space: nowrap;
-      animation: scroll-left 20s linear infinite;
+      animation: scroll-left 25s linear infinite;
     }
 
     @keyframes scroll-left {
@@ -299,15 +303,13 @@ export default function Portfolio() {
       100% { transform: translateX(-50%); }
     }
 
-    .bg-gradient {
-      background: linear-gradient(90deg, #00c6ff, #0072ff);
-      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
-      transition: transform 0.3s ease, background 0.3s ease;
+    .skill-badge {
+      transition: transform 0.3s ease, filter 0.3s ease;
     }
 
-    .bg-gradient:hover {
-      transform: scale(1.1);
-      background: linear-gradient(90deg, #0072ff, #00c6ff);
+    .skill-badge:hover {
+      transform: scale(1.15);
+      filter: brightness(1.15);
     }
 
     .skills-wrapper {
@@ -316,6 +318,7 @@ export default function Portfolio() {
     }
   `}</style>
 </section>
+
 
 
 
