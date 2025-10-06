@@ -262,37 +262,61 @@ export default function Portfolio() {
 </section>
 
 
-     <section id="skills" className="container py-5 text-center">
+    <section id="skills" className="container py-5 text-center">
   <h2 className="mb-4 text-info">{t.skills}</h2>
-  <div className="row justify-content-center">
-    {[
-      { name: "React.js", level: 90 },
-      { name: "Bootstrap CSS", level: 85 },
-      { name: "JavaScript", level: 80 },
-      { name: "HTML & CSS", level: 95 },
-      { name: "Node.js", level: 70 },
-      { name: "Express.js", level: 70 },
-      { name: "MongoDB", level: 60 },
-      { name: "Git & GitHub", level: 80 }
-    ].map((skill, i) => (
-      <div key={i} className="col-md-6 mb-3 text-start">
-        <h6 className="fw-semibold">{skill.name}</h6>
-        <div className="progress">
-          <div
-            className="progress-bar bg-info"
-            role="progressbar"
-            style={{ width: `${skill.level}%` }}
-            aria-valuenow={skill.level}
-            aria-valuemin="0"
-            aria-valuemax="100"
-          >
-            {skill.level}%
-          </div>
-        </div>
-      </div>
-    ))}
+
+  <div className="skills-wrapper position-relative overflow-hidden py-3">
+    <div className="skills-marquee d-flex">
+      {[
+        "React.js",
+        "Bootstrap CSS",
+        "JavaScript",
+        "HTML & CSS",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Git & GitHub"
+      ].map((skill, i) => (
+        <span
+          key={i}
+          className="badge rounded-pill bg-gradient text-white mx-2 fs-6"
+        >
+          {skill}
+        </span>
+      ))}
+    </div>
   </div>
+
+  <style>{`
+    .skills-marquee {
+      display: inline-flex;
+      white-space: nowrap;
+      animation: scroll-left 20s linear infinite;
+    }
+
+    @keyframes scroll-left {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .bg-gradient {
+      background: linear-gradient(90deg, #00c6ff, #0072ff);
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .bg-gradient:hover {
+      transform: scale(1.1);
+      background: linear-gradient(90deg, #0072ff, #00c6ff);
+    }
+
+    .skills-wrapper {
+      overflow: hidden;
+      width: 100%;
+    }
+  `}</style>
 </section>
+
 
 
      <section id="testimonials" className="container py-5 text-center">
