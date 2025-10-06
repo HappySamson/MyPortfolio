@@ -257,6 +257,56 @@ export default function Portfolio() {
         </div>
       </div>
     </div>
+                {/* Project 3 */}
+    <div className="col-md-6">
+      <div className="card h-100 border-success shadow-sm">
+        <img
+          src={TIC-TAC-TOE}
+          className="card-img-top"
+          alt="TIC-TAC-TOE Game"
+          style={{ objectFit: 'cover', height: '200px' }}
+        />
+        <div className="card-body d-flex flex-column">
+          <h5 className="card-title">TIC-TAC-TOE Game</h5>
+          <p className="card-text">
+            Game is to refresh our minds.
+          </p>
+          <a
+            href="https://tictactoegame-dun.vercel.app/"
+            target="_blank"
+            rel="noreferrer"
+            className="btn btn-outline-success mt-auto"
+          >
+            View Project
+          </a>
+        </div>
+      </div>
+    </div>
+                      {/* Project 4 */}
+    <div className="col-md-6">
+      <div className="card h-100 border-success shadow-sm">
+        <img
+          src={Quiz App}
+          className="card-img-top"
+          alt="Quiz App"
+          style={{ objectFit: 'cover', height: '200px' }}
+        />
+        <div className="card-body d-flex flex-column">
+          <h5 className="card-title">Quiz App</h5>
+          <p className="card-text">
+            It is to gain knowledge.
+          </p>
+          <a
+            href="https://quiz-app-one-roan-39.vercel.app/"
+            target="_blank"
+            rel="noreferrer"
+            className="btn btn-outline-success mt-auto"
+          >
+            View Project
+          </a>
+        </div>
+      </div>
+    </div> 
 
   </div>
 </section>
