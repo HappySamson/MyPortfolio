@@ -5,6 +5,8 @@ import './App.css';
 import './animation.css';
 import myPhoto from './sam.jpg';
 import weather from './weather.jpg';
+import tic_tac_toe from './tic_tac_toe.jpg';
+import quiz_app from './quiz app.png';
 import portfolio from './portfolio.jpg';
 import client1 from './c1.jpg';
 import samresume from './sam.pdf';
@@ -257,12 +259,12 @@ export default function Portfolio() {
         </div>
       </div>
     </div>
-{/*
-                
+
+{/*project 3 */}      
     <div className="col-md-6">
       <div className="card h-100 border-success shadow-sm">
         <img
-          src={TIC-TAC-TOE}
+          src={tic_tac_toe}
           className="card-img-top"
           alt="TIC-TAC-TOE Game"
           style={{ objectFit: 'cover', height: '200px' }}
@@ -283,11 +285,11 @@ export default function Portfolio() {
         </div>
       </div>
     </div>
-                    
+               {/*project 4 */}     
     <div className="col-md-6">
       <div className="card h-100 border-success shadow-sm">
         <img
-          src={Quiz App}
+          src={quiz_app}
           className="card-img-top"
           alt="Quiz App"
           style={{ objectFit: 'cover', height: '200px' }}
@@ -308,7 +310,7 @@ export default function Portfolio() {
         </div>
       </div>
     </div> 
-         */}
+         
 
   </div>
 </section>
