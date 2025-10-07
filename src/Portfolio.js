@@ -257,7 +257,8 @@ export default function Portfolio() {
         </div>
       </div>
     </div>
-                {/* Project 3 */}
+{/*
+                
     <div className="col-md-6">
       <div className="card h-100 border-success shadow-sm">
         <img
@@ -282,7 +283,7 @@ export default function Portfolio() {
         </div>
       </div>
     </div>
-                      {/* Project 4 */}
+                    
     <div className="col-md-6">
       <div className="card h-100 border-success shadow-sm">
         <img
@@ -307,6 +308,7 @@ export default function Portfolio() {
         </div>
       </div>
     </div> 
+         */}
 
   </div>
 </section>
