@@ -376,9 +376,9 @@ export default function Portfolio() {
       </section>
 
       {/* ---------------- SKILLS ---------------- */}
-     <section id="skills" className="container-fluid py-5 text-center bg-light border-top border-bottom">
-  <h2 className="mb-4 text-light fw-bold">💡 Skills</h2>
-  
+  <section id="skills" className="container-fluid py-5 text-center skills-bg border-top border-bottom">
+  <h2 className="mb-4 text-white fw-bold">💡 Skills</h2>
+
   <div className="marquee-container">
     <div className="marquee">
       {[
@@ -392,8 +392,8 @@ export default function Portfolio() {
         { name: "MongoDB", color: "#4DB33D" },
         { name: "GitHub", color: "#24292F" },
       ].map((skill, index) => (
-        <span 
-          key={index} 
+        <span
+          key={index}
           className="skill-badge m-2 px-3 py-2 rounded-pill fw-bold text-white"
           style={{ backgroundColor: skill.color }}
         >
@@ -403,6 +403,7 @@ export default function Portfolio() {
     </div>
   </div>
 </section>
+
 
 
       {/* ---------------- TESTIMONIALS ---------------- */}
