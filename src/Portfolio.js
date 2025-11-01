@@ -168,9 +168,9 @@ export default function Portfolio() {
       }`}
     >
       {/* ---------------- NAVBAR ---------------- */}
-     <header className="py-3 shadow-sm sticky-top bg-dark text-light">
+     <header className="py-3 shadow-sm sticky-top bg-light text-dark">
   <div className="container">
-    <nav className="navbar navbar-expand-lg navbar-dark">
+    <nav className="navbar navbar-expand-lg navbar-light">
       <h1 className="navbar-brand mb-0 text-info fw-bold">My Portfolio</h1>
 
       <button
@@ -377,7 +377,7 @@ export default function Portfolio() {
 
       {/* ---------------- SKILLS ---------------- */}
      <section id="skills" className="container-fluid py-5 text-center bg-light border-top border-bottom">
-  <h2 className="mb-4 text-primary">💡 Skills</h2>
+  <h2 className="mb-4 text-light fw-bold">💡 Skills</h2>
   
   <div className="marquee-container">
     <div className="marquee">
