@@ -149,7 +149,7 @@ header.sticky-top {
 /* 🌈 Full Gradient Background for Skills Section */
 .skills-section {
   background: linear-gradient(to right, #f8f9fa, #e0f7fa, #f3e5f5);
-  color: white;
+  color: black;
   width: 100%;
   min-height: 50vh;
   border-top: 2px solid rgba(255, 255, 255, 0.2);
@@ -166,6 +166,7 @@ header.sticky-top {
 
 .marquee {
   display: inline-block;
+  color:black;
   animation: scroll 18s linear infinite;
   padding-left: 100%;
 }
