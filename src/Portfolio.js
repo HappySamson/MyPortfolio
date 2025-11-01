@@ -378,30 +378,34 @@ export default function Portfolio() {
       </section>
 
       {/* ---------------- SKILLS ---------------- */}
-      <section id="skills" className="container py-5 text-center">
-        <h2 className="mb-4 text-info">{t.skills}</h2>
-        <div className="skills-wrapper position-relative overflow-hidden py-3">
-          <div className="skills-marquee d-flex">
-            {[
-              "React.js",
-              "Bootstrap CSS",
-              "JavaScript",
-              "HTML & CSS",
-              "Node.js",
-              "Express.js",
-              "MongoDB",
-              "Git & GitHub",
-            ].map((skill, i) => (
-              <span
-                key={i}
-                className="badge rounded-pill skill-badge text-white mx-2 fs-6 bg-gradient"
-              >
-                {skill}
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
+     <section id="skills" className="container-fluid py-5 text-center bg-light border-top border-bottom">
+  <h2 className="mb-4 text-primary">💡 Skills</h2>
+  
+  <div className="marquee-container">
+    <div className="marquee">
+      {[
+        { name: "React.js", color: "#61DBFB" },
+        { name: "Bootstrap", color: "#7952B3" },
+        { name: "JavaScript", color: "#F7DF1E" },
+        { name: "HTML", color: "#E34C26" },
+        { name: "CSS", color: "#264DE4" },
+        { name: "PHP", color: "#777BB3" },
+        { name: "MySQL", color: "#00758F" },
+        { name: "MongoDB", color: "#4DB33D" },
+        { name: "GitHub", color: "#24292F" },
+      ].map((skill, index) => (
+        <span 
+          key={index} 
+          className="skill-badge m-2 px-3 py-2 rounded-pill fw-bold text-white"
+          style={{ backgroundColor: skill.color }}
+        >
+          {skill.name}
+        </span>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* ---------------- TESTIMONIALS ---------------- */}
       <section id="testimonials" className="container py-5 text-center">
