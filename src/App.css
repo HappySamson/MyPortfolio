@@ -191,6 +191,32 @@ header.sticky-top {
   transform: scale(1.15);
   box-shadow: 0 0 20px rgba(255,255,255,0.5);
 }
+/* ---------- RESUME SECTION ---------- */
+#resume {
+  background: linear-gradient(135deg, #ffe6e6, #fff);
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 0;
+}
+
+#resume h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+#resume p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+#resume a.btn {
+  padding: 15px 40px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+}
 
 
 /* ---------- CONTACT SECTION ---------- */
