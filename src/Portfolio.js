@@ -376,8 +376,7 @@ export default function Portfolio() {
       </section>
 
       {/* ---------------- SKILLS ---------------- */}
- <section id="skills" className="skills-bg py-5 text-center">
-
+ <section id="skills" className="skills-section text-center py-5">
   <h2 className="mb-4 text-white fw-bold">💡 Skills</h2>
 
   <div className="marquee-container">
@@ -404,6 +403,7 @@ export default function Portfolio() {
     </div>
   </div>
 </section>
+
 
 
 
@@ -442,31 +442,47 @@ export default function Portfolio() {
       </section>
 
       {/* ---------------- RESUME ---------------- */}
-      <section id="resume" className="container py-5 text-center">
-        <h2 className="mb-3 text-danger">{t.resume}</h2>
-        <p>{t.resumeDownload}</p>
-        <a
-          href={samresume}
-          download
-          className="btn btn-outline-danger btn-lg"
-          onClick={() => {
-            setTimeout(() => {
-              Swal.fire({
-                title: language === "ta" ? "வெற்றி!" : "Success!",
-                text:
-                  language === "ta"
-                    ? "உங்கள் சுயவிவரம் பதிவிறக்கப்பட்டது."
-                    : "Your resume has been downloaded.",
-                icon: "success",
-                timer: 3000,
-                timerProgressBar: true,
-              });
-            }, 500);
-          }}
-        >
-          {t.download}
-        </a>
-      </section>
+     <section
+  id="resume"
+  className="container-fluid py-7 text-center"
+  style={{
+    background: "linear-gradient(135deg, #ffe6e6, #fff)",
+    minHeight: "80vh",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+  }}
+>
+  <h2 className="mb-4 text-danger fw-bold" style={{ fontSize: "2.5rem" }}>
+    {t.resume}
+  </h2>
+  <p className="mb-4" style={{ fontSize: "1.2rem" }}>
+    {t.resumeDownload}
+  </p>
+  <a
+    href={samresume}
+    download
+    className="btn btn-outline-danger btn-lg px-5 py-3 rounded-pill shadow-sm"
+    onClick={() => {
+      setTimeout(() => {
+        Swal.fire({
+          title: language === "ta" ? "வெற்றி!" : "Success!",
+          text:
+            language === "ta"
+              ? "உங்கள் சுயவிவரம் பதிவிறக்கப்பட்டது."
+              : "Your resume has been downloaded.",
+          icon: "success",
+          timer: 3000,
+          timerProgressBar: true,
+        });
+      }, 500);
+    }}
+  >
+    {t.download}
+  </a>
+</section>
+
 
       {/* ---------------- CONTACT ---------------- */}
       <section
