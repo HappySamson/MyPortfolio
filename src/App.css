@@ -221,5 +221,34 @@ header {
 .colorful-navbar .btn-outline-secondary:focus {
   box-shadow: none;
 }
+/* Marquee animation */
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  width: 100%;
+}
+
+.marquee {
+  display: inline-block;
+  animation: scroll 18s linear infinite;
+  padding-left: 100%;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Skill badges hover effect */
+.skill-badge {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-badge:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
 
 
