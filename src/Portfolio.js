@@ -168,10 +168,10 @@ export default function Portfolio() {
       }`}
     >
       {/* ---------------- NAVBAR ---------------- */}
-     <header className="py-3 shadow-sm sticky-top bg-light text-dark">
+     <header className="py-3 shadow-sm sticky-top navbar-gradient">
   <div className="container">
-    <nav className="navbar navbar-expand-lg navbar-light">
-      <h1 className="navbar-brand mb-0 text-info fw-bold">My Portfolio</h1>
+    <nav className="navbar navbar-expand-lg">
+      <h1 className="navbar-brand mb-0 fw-bold text-light glow-text">My Portfolio</h1>
 
       <button
         className="navbar-toggler"
@@ -181,17 +181,15 @@ export default function Portfolio() {
         <span className="navbar-toggler-icon"></span>
       </button>
 
-      <div
-        className={`collapse navbar-collapse ${navCollapsed ? "" : "show"}`}
-      >
+      <div className={`collapse navbar-collapse ${navCollapsed ? "" : "show"}`}>
         <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
           {t.nav.map((item, index) => {
             const id = item.toLowerCase();
             return (
               <li key={index} className="nav-item">
                 <a
-                  className={`nav-link ${
-                    activeSection === id ? "active text-info" : "text-light"
+                  className={`nav-link text-uppercase fw-semibold px-3 ${
+                    activeSection === id ? "active-link" : "nav-text"
                   }`}
                   href={`#${id}`}
                   onClick={() => setNavCollapsed(true)}
@@ -203,12 +201,12 @@ export default function Portfolio() {
           })}
         </ul>
 
-        {/* Language Selector Only */}
+        {/* Language Selector */}
         <div className="ms-lg-3">
           <select
             onChange={(e) => setLanguage(e.target.value)}
             value={language}
-            className="form-select form-select-sm bg-dark text-light border-light"
+            className="form-select form-select-sm bg-transparent text-light border-light fw-bold"
           >
             <option value="en">EN</option>
             <option value="ta">TA</option>
@@ -218,6 +216,7 @@ export default function Portfolio() {
     </nav>
   </div>
 </header>
+
 
 
 
