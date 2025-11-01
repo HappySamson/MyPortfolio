@@ -146,15 +146,21 @@ header.sticky-top {
 }
 
 /* ---------- SKILLS SECTION ---------- */
-.skills-bg {
-  background: linear-gradient(90deg, #D7F5F5);
+/* 🌈 Full Gradient Background for Skills Section */
+.skills-section {
+  background: linear-gradient(135deg, #3f51b5, #673ab7, #512da8);
   color: white;
+  width: 100%;
+  min-height: 50vh;
+  border-top: 2px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
 }
 
+/* Marquee effect */
 .marquee-container {
   overflow: hidden;
   white-space: nowrap;
-  position: relative;
   width: 100%;
 }
 
@@ -169,20 +175,23 @@ header.sticky-top {
   100% { transform: translateX(-100%); }
 }
 
-/* Pause marquee on hover */
+/* Pause on hover */
 .marquee:hover {
   animation-play-state: paused;
 }
 
-/* Skill badge design */
+/* Skill badges */
 .skill-badge {
+  display: inline-block;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-size: 1.1rem;
 }
 
 .skill-badge:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 15px rgba(255,255,255,0.5);
+  transform: scale(1.15);
+  box-shadow: 0 0 20px rgba(255,255,255,0.5);
 }
+
 
 /* ---------- CONTACT SECTION ---------- */
 .contact-section-bg {
