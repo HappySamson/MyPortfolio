@@ -148,7 +148,7 @@ header.sticky-top {
 /* ---------- SKILLS SECTION ---------- */
 /* 🌈 Full Gradient Background for Skills Section */
 .skills-section {
-  background: linear-gradient(135deg, #f8cdda, #a8edea);
+  background: linear-gradient(to right, #f8f9fa, #e0f7fa, #f3e5f5);
   color: white;
   width: 100%;
   min-height: 50vh;
@@ -193,8 +193,7 @@ header.sticky-top {
 }
 /* ---------- RESUME SECTION ---------- */
 #resume {
-  background: linear-gradient(135deg, #f8cdda, #a8edea);
-
+ background: linear-gradient(to right, #f8f9fa, #e0f7fa, #f3e5f5);
   min-height: 80vh;
   display: flex;
   flex-direction: column;
