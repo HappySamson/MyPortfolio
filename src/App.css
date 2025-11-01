@@ -223,6 +223,7 @@ header {
 }
 /* Marquee animation */
 .marquee-container {
+  background: linear-gradient(135deg, #e0f7fa, #f1f8e9);
   overflow: hidden;
   white-space: nowrap;
   position: relative;
