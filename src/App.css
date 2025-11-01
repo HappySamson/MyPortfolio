@@ -1,4 +1,4 @@
-
+/* Smooth scroll */
 html {
   scroll-behavior: smooth;
 }
@@ -8,31 +8,118 @@ img.rounded-circle {
   width: 150px;
   height: 150px;
   object-fit: cover;
-  border: 4px solid #9cc0f6; /* Bootstrap primary */
-  box-shadow: 0 0 10px #9cc0f6,0 0 20px #9cc0f6;
+  border: 4px solid #9cc0f6;
+  box-shadow: 0 0 10px #9cc0f6, 0 0 20px #9cc0f6;
+  transition: transform 0.3s ease;
 }
-.nav-link{
+
+img.rounded-circle:hover {
+  transform: scale(1.1);
+}
+
+/* ---------- NAVBAR ---------- */
+
+/* Gradient background for navbar */
+.navbar-gradient {
+  background: linear-gradient(90deg, #3f51b5, #673ab7, #512da8);
+  color: #fff;
+  transition: background 0.4s ease-in-out, box-shadow 0.3s ease;
+}
+
+/* Sticky navbar shadow */
+header.sticky-top {
+  z-index: 1020;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Glow effect for brand */
+.brand-glow {
+  color: #fff !important;
+  text-shadow: 0 0 10px rgba(255,255,255,0.6), 0 0 20px rgba(99,102,241,0.8);
+  letter-spacing: 1px;
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
+/* Navbar link styling */
+.nav-text, .navbar-gradient .nav-link {
+  color: rgba(255, 255, 255, 0.9) !important;
   font-family: 'Times New Roman', Times, serif;
-  color: black;
-}
-/* Add hover effect for nav links */
-.nav-link:hover {
-  text-decoration: none;
-  color: #000000 !important;
+  position: relative;
+  padding: 8px 14px;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
-/* Navbar shadow effect */
-header {
-  transition: background-color 0.3s ease;
+/* Hover underline + zoom */
+.navbar-gradient .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: #fff;
+  transition: width 0.4s ease;
 }
 
-/* Section padding adjustment for smaller screens */
-@media (max-width: 576px) {
-  section {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-  }
+.navbar-gradient .nav-link:hover {
+  color: #ffeb3b !important;
+  transform: scale(1.08);
 }
+
+.navbar-gradient .nav-link:hover::after {
+  width: 100%;
+}
+
+/* Active nav link */
+.active-link {
+  color: #00e5ff !important;
+  font-weight: 700;
+  border-bottom: 2px solid #00e5ff;
+}
+
+/* Navbar toggler icon for white bars */
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Language dropdown */
+.form-select {
+  border-radius: 10px;
+  backdrop-filter: blur(8px);
+  background-color: rgba(255,255,255,0.2);
+  color: #fff;
+  border: none;
+}
+
+.form-select option {
+  background-color: #3f51b5;
+  color: white;
+}
+
+.form-select:focus {
+  box-shadow: none;
+}
+
+/* ---------- ABOUT SECTION ---------- */
+.about-photo-large {
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 10px solid #fff;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.25);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  margin: auto;
+}
+
+.about-photo-large:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 60px rgba(255, 193, 7, 0.7);
+}
+
+/* ---------- EDUCATION TIMELINE ---------- */
 .timeline-container {
   position: relative;
   max-width: 800px;
@@ -58,176 +145,12 @@ header {
   border: 3px solid white;
 }
 
-.timeline-item h5 {
-  margin-bottom: 5px;
-}
-
-.timeline-item p {
-  margin-bottom: 8px;
-  color: #555;
-}
-.education-bg {
-  background: linear-gradient(135deg, #e0f7fa, #f1f8e9);
-}
-.about-photo-large {
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-  aspect-ratio: 1 / 1; /* Maintains circular shape */
-  border-radius: 50%;
-  object-fit: cover;
-  border: 10px solid #fff;
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.25);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  margin: auto;
-}
-
-.about-photo-large:hover {
-  transform: scale(1.08);
-  box-shadow: 0 0 60px rgba(255, 193, 7, 0.7); /* glowing yellow */
-}
-
-@keyframes bounceIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.8) translateY(-50px);
-  }
-  60% {
-    opacity: 1;
-    transform: scale(1.05) translateY(10px);
-  }
-  100% {
-    transform: scale(1) translateY(0);
-  }
-}
-
-.animate-bounce {
-  animation: bounceIn 1s ease-in-out;
-}
-.card:hover {
-  transform: scale(1.03);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-.progress-bar {
-  transition: width 1.5s ease-in-out;
-}
-.rounded-circle {
-  transition: transform 0.3s ease;
-}
-.rounded-circle:hover {
-  transform: scale(1.1);
-}
-.contact-section-bg {
-  background: linear-gradient(135deg, #eedbed 0%, #b5cfd7 100%);
-  color: #1c1c1c;
-}
-
-@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-  100% { transform: translateY(0); }
-}
-
-.contact-section-bg .social-icon {
-  animation: float 3s ease-in-out infinite;
-}
-.social-icons a {
-  color: rgb(15, 15, 15);
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.social-icons a:hover {
-  transform: scale(1.2);
-  color: #f8b500; /* Golden effect */
-}
-
-
-
-.contact-section-bg h2 {
-  font-weight: bold;
-  animation: fadeInUp 1s ease;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Colorful gradient background with soft shadow */
-.colorful-navbar {
-  background: linear-gradient(90deg, #ff416c, #ff4b2b); /* pink to orange */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Brand styling */
-.colorful-navbar .navbar-brand {
-  font-weight: bold;
-  color: #fff !important;
-  font-size: 1.8rem;
-  letter-spacing: 1px;
-}
-
-/* Nav links styling */
-.colorful-navbar .nav-link {
-  color: #fff !important;
-  position: relative;
-  padding: 8px 14px;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-/* Hover underline effect */
-.colorful-navbar .nav-link::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0%;
-  height: 2px;
-  background: #fff;
-  transition: width 0.4s ease;
-}
-
-/* On hover, underline grows and link zooms */
-.colorful-navbar .nav-link:hover {
-  color: #ffd700 !important; /* gold on hover */
-  transform: scale(1.08);
-}
-
-.colorful-navbar .nav-link:hover::after {
-  width: 100%;
-}
-
-/* Toggler icon override for white color */
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-}
-
-/* Theme switch & language dropdown */
-.colorful-navbar .form-select,
-.colorful-navbar .btn-outline-secondary {
-  background-color: rgba(255, 255, 255, 0.2);
-  border: none;
-  color: #fff;
-}s
-
-.colorful-navbar .form-select:focus,
-.colorful-navbar .btn-outline-secondary:focus {
-  box-shadow: none;
-}
-/* Gradient background for the skills section */
+/* ---------- SKILLS SECTION ---------- */
 .skills-bg {
-  background: linear-gradient(90deg, #3f51b5, #673ab7);
+  background: linear-gradient(90deg, #512da8, #673ab7, #3f51b5);
   color: white;
 }
 
-/* Marquee animation */
 .marquee-container {
   overflow: hidden;
   white-space: nowrap;
@@ -246,79 +169,72 @@ header {
   100% { transform: translateX(-100%); }
 }
 
-/* Pause the marquee on hover */
+/* Pause marquee on hover */
 .marquee:hover {
   animation-play-state: paused;
 }
 
-/* Skill badge styling */
+/* Skill badge design */
 .skill-badge {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .skill-badge:hover {
   transform: scale(1.1);
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 15px rgba(255,255,255,0.5);
 }
 
-
-header.sticky-top {
-  z-index: 1020;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+/* ---------- CONTACT SECTION ---------- */
+.contact-section-bg {
+  background: linear-gradient(135deg, #eedbed 0%, #b5cfd7 100%);
+  color: #1c1c1c;
 }
 
-header.sticky-top.scrolled {
- background: #111; !important;
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
-}
-/* 🌈 Navbar Gradient Background */
-.navbar-gradient {
-  background: linear-gradient(90deg, #3f51b5, #673ab7, #512da8);
-  color: #fff;
-  transition: background 0.4s ease-in-out, box-shadow 0.3s ease;
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
 }
 
-/* ✨ Glow effect for the brand name */
-.glow-text {
-  color: #fff;
-  text-shadow: 0 0 10px rgba(255,255,255,0.6), 0 0 20px rgba(99,102,241,0.8);
-  letter-spacing: 1px;
+.contact-section-bg .social-icon {
+  animation: float 3s ease-in-out infinite;
 }
 
-/* 🩵 Navbar link styling */
-.nav-text {
-  color: rgba(255, 255, 255, 0.9) !important;
-  transition: color 0.3s ease, transform 0.3s ease;
+.social-icons a {
+  color: rgb(15, 15, 15);
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.nav-text:hover {
-  color: #ffeb3b !important;
-  transform: scale(1.1);
+.social-icons a:hover {
+  transform: scale(1.2);
+  color: #f8b500;
 }
 
-/* 💙 Active link styling */
-.active-link {
-  color: #00e5ff !important;
-  font-weight: 700;
-  border-bottom: 2px solid #00e5ff;
+/* ---------- CARDS / ANIMATIONS ---------- */
+.card:hover {
+  transform: scale(1.03);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* 🌟 Dropdown (language selector) */
-.form-select {
-  border-radius: 10px;
-  backdrop-filter: blur(8px);
+.progress-bar {
+  transition: width 1.5s ease-in-out;
 }
 
-.form-select option {
-  background-color: #3f51b5;
-  color: white;
+@keyframes bounceIn {
+  0% { opacity: 0; transform: scale(0.8) translateY(-50px); }
+  60% { opacity: 1; transform: scale(1.05) translateY(10px); }
+  100% { transform: scale(1) translateY(0); }
 }
 
-/* ✨ Sticky shadow when scrolling */
-header.sticky-top {
-  z-index: 1020;
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+.animate-bounce {
+  animation: bounceIn 1s ease-in-out;
 }
 
-
-
+/* ---------- RESPONSIVE FIX ---------- */
+@media (max-width: 576px) {
+  section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
