@@ -16,6 +16,7 @@ import twelve from './12th.jpg';
 import client2 from './c2.jpg';
 import Swal from 'sweetalert2';
 import emailjs from 'emailjs-com';
+import "sweetalert2/dist/sweetalert2.min.css";
 
 
 
@@ -108,6 +109,38 @@ export default function Portfolio() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  
+export default function EducationSection({ t, dbcy, twelve, ten }) {
+  const [isUnlocked, setIsUnlocked] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const [inputPassword, setInputPassword] = useState("");
+
+  // 🔑 Change this to your own secret password
+  const correctPassword = "SAM1607";
+
+  const handlePasswordSubmit = (e) => {
+    e.preventDefault();
+    if (inputPassword === correctPassword) {
+      setIsUnlocked(true);
+      setShowPassword(false);
+      Swal.fire({
+        icon: "success",
+        title: "Access Granted!",
+        text: "Certificates are now visible.",
+        confirmButtonColor: "#3085d6",
+      });
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: "Incorrect Password",
+        text: "Please try again.",
+        confirmButtonColor: "#d33",
+      });
+    }
+    setInputPassword("");
+  };
+
+
   return (
     <div className={`min-vh-100 ${darkMode ? 'bg-dark text-light' : 'bg-light text-dark gradient-bg'}`}>
      <header className="py-3 shadow-sm">
@@ -169,36 +202,103 @@ export default function Portfolio() {
 
 
 
-<section id="education" className="container-fluid py-5 text-center education-bg border-top border-bottom animate-fadein">
-  <h2 className="mb-5 text-secondary animate-fadein">🎓 {t.education}</h2>
-  <div className="timeline-container mx-auto text-start">
+ <section
+      id="education"
+      className="container-fluid py-5 text-center education-bg border-top border-bottom animate-fadein"
+    >
+      <h2 className="mb-5 text-secondary animate-fadein">
+        🎓 {t.education}
+      </h2>
 
-    <div className="timeline-item animate-fadein-up">
-      <h5><strong>Master in Computer Applications [MCA]</strong> – Ganadipathy Tulsi's Jain Engineering College (2024–2026)</h5>
-      <p>Learned full-stack development, data structures, and cloud computing.</p>
-      <a href="#" target="_blank" rel="noopener noreferrer" className="btn btn-outline-primary btn-sm">View Certificate</a>
-    </div>
+      {/* 🔐 Password prompt */}
+      {!isUnlocked && (
+        <div className="mb-4">
+          {!showPassword ? (
+            <button
+              className="btn btn-primary btn-sm"
+              onClick={() => setShowPassword(true)}
+            >
+              Enter Password to View Certificates
+            </button>
+          ) : (
+            <form
+              onSubmit={handlePasswordSubmit}
+              className="d-flex justify-content-center align-items-center gap-2 flex-wrap"
+            >
+              <input
+                type="password"
+                value={inputPassword}
+                onChange={(e) => setInputPassword(e.target.value)}
+                className="form-control"
+                placeholder="Enter password"
+                style={{ maxWidth: "250px" }}
+              />
+              <button type="submit" className="btn btn-outline-primary">
+                Unlock
+              </button>
+            </form>
+          )}
+        </div>
+      )}
 
-    <div className="timeline-item animate-fadein-up">
-      <h5><strong>Bachelors in Computer Applications</strong> – Don Bosco College(Co-Ed),Yelagiri Hills(2021–2024)</h5>
-      <p>Focused on developing personal career and to the new technologies</p>
-      <a href= {dbcy} target="_blank" rel="noopener noreferrer" className="btn btn-outline-primary btn-sm">View Certificate</a>
-    </div>
+      <div className="timeline-container mx-auto text-start">
+        <div className="timeline-item animate-fadein-up">
+          <h5>
+            <strong>Master in Computer Applications [MCA]</strong> – Ganadipathy Tulsi's Jain Engineering College (2024–2026)
+          </h5>
+          <p>Learned full-stack development, data structures, and cloud computing.</p>
+          {isUnlocked ? (
+            <a href="#" target="_blank" rel="noopener noreferrer" className="btn btn-outline-primary btn-sm">
+              View Certificate
+            </a>
+          ) : (
+            <span className="badge bg-secondary">Locked 🔒</span>
+          )}
+        </div>
 
-    <div className="timeline-item animate-fadein-up">
-      <h5><strong>HSC</strong> – TMKV Govt.Boys.Hr.Sec.School (2020–2021)</h5>
-      <p>Basic education and foundation of programming logic.</p>
-      <a href= {twelve} target="_blank" rel="noopener noreferrer" className="btn btn-outline-primary btn-sm">View Certificate</a>
-    </div>
+        <div className="timeline-item animate-fadein-up">
+          <h5>
+            <strong>Bachelors in Computer Applications</strong> – Don Bosco College (Co-Ed), Yelagiri Hills (2021–2024)
+          </h5>
+          <p>Focused on developing personal career and to the new technologies.</p>
+          {isUnlocked ? (
+            <a href={dbcy} target="_blank" rel="noopener noreferrer" className="btn btn-outline-primary btn-sm">
+              View Certificate
+            </a>
+          ) : (
+            <span className="badge bg-secondary">Locked 🔒</span>
+          )}
+        </div>
 
-      <div className="timeline-item animate-fadein-up">
-      <h5><strong>SSLC</strong> – TMKV Govt.Boys.Hr.Sec.School (2018–2019)</h5>
-      <p>Getting Education and Focusing on the Ambition .</p>
-      <a href= {ten} target="_blank" rel="noopener noreferrer" className="btn btn-outline-primary btn-sm">View Certificate</a>
-    </div>
+        <div className="timeline-item animate-fadein-up">
+          <h5>
+            <strong>HSC</strong> – TMKV Govt.Boys.Hr.Sec.School (2020–2021)
+          </h5>
+          <p>Basic education and foundation of programming logic.</p>
+          {isUnlocked ? (
+            <a href={twelve} target="_blank" rel="noopener noreferrer" className="btn btn-outline-primary btn-sm">
+              View Certificate
+            </a>
+          ) : (
+            <span className="badge bg-secondary">Locked 🔒</span>
+          )}
+        </div>
 
-  </div>
-</section>
+        <div className="timeline-item animate-fadein-up">
+          <h5>
+            <strong>SSLC</strong> – TMKV Govt.Boys.Hr.Sec.School (2018–2019)
+          </h5>
+          <p>Getting education and focusing on ambition.</p>
+          {isUnlocked ? (
+            <a href={ten} target="_blank" rel="noopener noreferrer" className="btn btn-outline-primary btn-sm">
+              View Certificate
+            </a>
+          ) : (
+            <span className="badge bg-secondary">Locked 🔒</span>
+          )}
+        </div>
+      </div>
+    </section>
 
 
 
