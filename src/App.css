@@ -13,7 +13,7 @@ img.rounded-circle {
 }
 .nav-link{
   font-family: 'Times New Roman', Times, serif;
-  color: blue;
+  color: black;
 }
 /* Add hover effect for nav links */
 .nav-link:hover {
@@ -270,6 +270,54 @@ header.sticky-top {
 header.sticky-top.scrolled {
  background: #111; !important;
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+}
+/* 🌈 Navbar Gradient Background */
+.navbar-gradient {
+  background: linear-gradient(90deg, #3f51b5, #673ab7, #512da8);
+  color: #fff;
+  transition: background 0.4s ease-in-out, box-shadow 0.3s ease;
+}
+
+/* ✨ Glow effect for the brand name */
+.glow-text {
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255,255,255,0.6), 0 0 20px rgba(99,102,241,0.8);
+  letter-spacing: 1px;
+}
+
+/* 🩵 Navbar link styling */
+.nav-text {
+  color: rgba(255, 255, 255, 0.9) !important;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-text:hover {
+  color: #ffeb3b !important;
+  transform: scale(1.1);
+}
+
+/* 💙 Active link styling */
+.active-link {
+  color: #00e5ff !important;
+  font-weight: 700;
+  border-bottom: 2px solid #00e5ff;
+}
+
+/* 🌟 Dropdown (language selector) */
+.form-select {
+  border-radius: 10px;
+  backdrop-filter: blur(8px);
+}
+
+.form-select option {
+  background-color: #3f51b5;
+  color: white;
+}
+
+/* ✨ Sticky shadow when scrolling */
+header.sticky-top {
+  z-index: 1020;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
 }
 
 
