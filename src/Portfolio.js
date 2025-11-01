@@ -168,60 +168,64 @@ export default function Portfolio() {
       }`}
     >
       {/* ---------------- NAVBAR ---------------- */}
-      <header className="py-3 shadow-sm">
-        <div className="container">
-          <nav className="navbar navbar-expand-lg">
-            <h1 className="navbar-brand mb-0">My Portfolio</h1>
-            <button
-              className="navbar-toggler"
-              type="button"
-              onClick={() => setNavCollapsed(!navCollapsed)}
-            >
-              <span className="navbar-toggler-icon"></span>
-            </button>
-            <div
-              className={`collapse navbar-collapse ${
-                navCollapsed ? "" : "show"
-              }`}
-            >
-              <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                {t.nav.map((item, index) => {
-                  const id = item.toLowerCase();
-                  return (
-                    <li key={index} className="nav-item">
-                      <a
-                        className={`nav-link ${
-                          activeSection === id ? "active" : ""
-                        }`}
-                        href={`#${id}`}
-                        onClick={() => setNavCollapsed(true)}
-                      >
-                        {item}
-                      </a>
-                    </li>
-                  );
-                })}
-              </ul>
-              <div className="d-flex align-items-center gap-2 ms-lg-3">
-                <button
-                  onClick={() => setDarkMode(!darkMode)}
-                  className="btn btn-outline-secondary"
+     <header className="py-3 shadow-sm sticky-top bg-dark text-light">
+  <div className="container">
+    <nav className="navbar navbar-expand-lg navbar-dark">
+      <h1 className="navbar-brand mb-0 text-info fw-bold">My Portfolio</h1>
+
+      <button
+        className="navbar-toggler"
+        type="button"
+        onClick={() => setNavCollapsed(!navCollapsed)}
+      >
+        <span className="navbar-toggler-icon"></span>
+      </button>
+
+      <div
+        className={`collapse navbar-collapse ${navCollapsed ? "" : "show"}`}
+      >
+        <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+          {t.nav.map((item, index) => {
+            const id = item.toLowerCase();
+            return (
+              <li key={index} className="nav-item">
+                <a
+                  className={`nav-link ${
+                    activeSection === id ? "active text-info" : "text-light"
+                  }`}
+                  href={`#${id}`}
+                  onClick={() => setNavCollapsed(true)}
                 >
-                  {darkMode ? <FaSun /> : <FaMoon />}
-                </button>
-                <select
-                  onChange={(e) => setLanguage(e.target.value)}
-                  value={language}
-                  className="form-select form-select-sm"
-                >
-                  <option value="en">EN</option>
-                  <option value="ta">TA</option>
-                </select>
-              </div>
-            </div>
-          </nav>
+                  {item}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+
+        <div className="d-flex align-items-center gap-2 ms-lg-3">
+          <button
+            onClick={() => setDarkMode(!darkMode)}
+            className="btn btn-outline-light btn-sm"
+            title="Toggle Theme"
+          >
+            {darkMode ? <FaSun /> : <FaMoon />}
+          </button>
+
+          <select
+            onChange={(e) => setLanguage(e.target.value)}
+            value={language}
+            className="form-select form-select-sm bg-dark text-light border-light"
+          >
+            <option value="en">EN</option>
+            <option value="ta">TA</option>
+          </select>
         </div>
-      </header>
+      </div>
+    </nav>
+  </div>
+</header>
+
 
       {/* ---------------- ABOUT ---------------- */}
       <section id="about" className="container py-5">
