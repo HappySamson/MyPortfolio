@@ -203,15 +203,8 @@ export default function Portfolio() {
           })}
         </ul>
 
-        <div className="d-flex align-items-center gap-2 ms-lg-3">
-          // <button
-          //   onClick={() => setDarkMode(!darkMode)}
-          //   className="btn btn-outline-light btn-sm"
-          //   title="Toggle Theme"
-          // >
-          //   {darkMode ? <FaSun /> : <FaMoon />}
-          // </button>
-
+        {/* Language Selector Only */}
+        <div className="ms-lg-3">
           <select
             onChange={(e) => setLanguage(e.target.value)}
             value={language}
@@ -225,6 +218,7 @@ export default function Portfolio() {
     </nav>
   </div>
 </header>
+
 
 
       {/* ---------------- ABOUT ---------------- */}
