@@ -204,13 +204,13 @@ export default function Portfolio() {
         </ul>
 
         <div className="d-flex align-items-center gap-2 ms-lg-3">
-          <button
-            onClick={() => setDarkMode(!darkMode)}
-            className="btn btn-outline-light btn-sm"
-            title="Toggle Theme"
-          >
-            {darkMode ? <FaSun /> : <FaMoon />}
-          </button>
+          // <button
+          //   onClick={() => setDarkMode(!darkMode)}
+          //   className="btn btn-outline-light btn-sm"
+          //   title="Toggle Theme"
+          // >
+          //   {darkMode ? <FaSun /> : <FaMoon />}
+          // </button>
 
           <select
             onChange={(e) => setLanguage(e.target.value)}
