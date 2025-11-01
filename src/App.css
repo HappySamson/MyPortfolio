@@ -221,11 +221,13 @@ header {
 .colorful-navbar .btn-outline-secondary:focus {
   box-shadow: none;
 }
-/* Marquee animation */
-.skills-bg{
-  background:linear-gradient(90deg, #3f51b5, #673ab7);
+/* Gradient background for the skills section */
+.skills-bg {
+  background: linear-gradient(90deg, #3f51b5, #673ab7);
   color: white;
 }
+
+/* Marquee animation */
 .marquee-container {
   overflow: hidden;
   white-space: nowrap;
@@ -244,22 +246,30 @@ header {
   100% { transform: translateX(-100%); }
 }
 
-/* Skill badges hover effect */
+/* Pause the marquee on hover */
+.marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Skill badge styling */
 .skill-badge {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .skill-badge:hover {
   transform: scale(1.1);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
 }
+
+
 header.sticky-top {
   z-index: 1020;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 header.sticky-top.scrolled {
-  background-color: #111 !important;
+ background: linear-gradient(90deg, #3f51b5, #673ab7); !important;
+  color:#0000;
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
 }
 
