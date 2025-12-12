@@ -563,15 +563,16 @@ export default function Portfolio() {
       >
         &copy; 2025 Sam. All rights reserved.
       </footer>
-        {/* ---------------- FLOATING WHATSAPP BUTTON ---------------- */}
+{/* ---------------- FLOATING WHATSAPP BUTTON ---------------- */}
 <a
   href="https://wa.me/9363125355"
   target="_blank"
   rel="noopener noreferrer"
-  className="whatsapp-float"
+  className={`whatsapp-float ${darkMode ? "whatsapp-dark" : "whatsapp-light"}`}
 >
-  <FaWhatsapp size={35} />
+  <FaWhatsapp size={32} />
 </a>
+
 
     </div>
   );
