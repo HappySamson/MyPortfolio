@@ -1,0 +1,37 @@
+/* Gradient background */
+.gradient-bg {
+  background: linear-gradient(to right, #f8f9fa, #e0f7fa, #f3e5f5);
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadein {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-fadein-up {
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 0.2s;
+}
+.education-bg {
+  background: linear-gradient(135deg, #e0f7fa, #f1f8e9);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadein {
+  animation: fadeInUp 1s ease-out forwards;
+}
