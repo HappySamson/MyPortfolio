@@ -23,6 +23,8 @@ import ten from "./10th .jpg";
 import twelve from "./12th.jpg";
 import Swal from "sweetalert2";
 import emailjs from "emailjs-com";
+import { FaWhatsapp } from "react-icons/fa";
+import "font-awesome/css/font-awesome.min.css";
 import "sweetalert2/dist/sweetalert2.min.css";
 
 export default function Portfolio() {
@@ -553,6 +555,7 @@ export default function Portfolio() {
         </div>
       </section>
 
+
       {/* ---------------- FOOTER ---------------- */}
       <footer
         className={`text-center py-3 border-top ${
@@ -561,6 +564,15 @@ export default function Portfolio() {
       >
         &copy; 2025 Sam. All rights reserved.
       </footer>
+        {/* ---------------- FLOATING WHATSAPP BUTTON ---------------- */}
+<a
+  href="https://wa.me/919500784719"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="whatsapp-float"
+>
+  <i className="fab fa-whatsapp"></i>
+</a>
     </div>
   );
 }
