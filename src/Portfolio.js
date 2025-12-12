@@ -23,7 +23,6 @@ import ten from "./10th .jpg";
 import twelve from "./12th.jpg";
 import Swal from "sweetalert2";
 import emailjs from "emailjs-com";
-import "font-awesome/css/font-awesome.min.css";
 import { FaWhatsapp } from "react-icons/fa";
 import "sweetalert2/dist/sweetalert2.min.css";
 
