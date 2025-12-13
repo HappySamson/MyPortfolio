@@ -4,8 +4,7 @@ import {
   FaLinkedin,
   FaInstagram,
   FaFacebook,
-  FaMoon,
-  FaSun,
+  
 } from "react-icons/fa";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
@@ -28,7 +27,7 @@ import "sweetalert2/dist/sweetalert2.min.css";
 
 export default function Portfolio() {
   // 🌙 State management
-  const [darkMode, setDarkMode] = useState(false);
+  // const [darkMode, setDarkMode] = useState(false);
   const [language, setLanguage] = useState("en");
   const [navCollapsed, setNavCollapsed] = useState(true);
   const [activeSection, setActiveSection] = useState("about");
